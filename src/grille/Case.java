@@ -25,12 +25,4 @@ public class Case
 	{
 		return this.image ;
 	}
-	public static void main(String[] args) 
-	{
-	Case a = Case(2,3);
-	a.setValeur(2);
-	
-	
-
-	}
 }
