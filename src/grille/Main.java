@@ -6,15 +6,19 @@ public class Main
 	{
 		Case a = new Case(2,3);
 		a.setValeur(6);
-		System.out.println(a.getValeur());
-		Case[] grille = new Case[5*5];
+		a.setImage(0);
+		//System.out.println(a.getValeur());
+		Case[][] grille = new Case[5][5];
+		int j = 0;
 		for (int i = 0; i < grille.length; i++)
 		   {
-			grille[i] = new Case(1,1);
+			grille[i][j] = new Case(1,1);
 		   }
-		System.out.println(grille[1].getValeur());
-		System.out.println(grille[2].getValeur());
-		System.out.println(grille[3].getValeur());
+		for (int i = 0; i < grille.length; i++)
+		   {
+				System.out.print(grille[i][j].getValeur());
+		   }		
+
 		
 	}	
 }
