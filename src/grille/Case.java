@@ -3,11 +3,11 @@ package grille;
 public class Case 
 {
 	private int valeur;
-	private int image;
+	private int statut;
 	public Case(int val,int img)
 	{
 		this.valeur = val;
-		this.image = img;
+		this.statut = img;
 	}
 	public void setValeur(int val)
 	{
@@ -17,12 +17,12 @@ public class Case
 	{
 		return this.valeur ;
 	}
-	public void setImage(int img)
+	public void setImage(int sta)
 	{
-		this.image = img;
+		this.statut = sta;
 	}
 	public int getImage()
 	{
-		return this.image ;
+		return this.statut ;
 	}
 }
