@@ -16,14 +16,6 @@ public class Main
 				grille[i][j] = new Case(1,1);
 		  	}			
 		}
-		/* TEST
-		 * 
-		 * 
-		 * 
-		 * 
-		 * 
-		 * TESt
-		 */
 
 		for (int j = 0; j < grille.length; j++)
 		{
