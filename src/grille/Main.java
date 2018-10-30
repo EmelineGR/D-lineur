@@ -9,16 +9,22 @@ public class Main
 		a.setImage(0);
 		//System.out.println(a.getValeur());
 		Case[][] grille = new Case[5][5];
-		int j = 0;
-		for (int i = 0; i < grille.length; i++)
-		   {
-			grille[i][j] = new Case(1,1);
-		   }
-		for (int i = 0; i < grille.length; i++)
-		   {
-				System.out.print(grille[i][j].getValeur());
-		   }		
+		for (int j = 0; j < grille.length; j++)
+		{
+			for (int i = 0; i < grille.length; i++)
+		  	{
+				grille[i][j] = new Case(1,1);
+		  	}			
+		}
 
+		for (int j = 0; j < grille.length; j++)
+		{
+			for (int i = 0; i < grille.length; i++)
+			{
+				System.out.print(grille[i][j].getValeur());
+			}
+			System.out.println();
+		}
 		
 	}	
 }
