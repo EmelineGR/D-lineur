@@ -24,14 +24,6 @@ public class Main
 		  	}			
 		}
 		afficherGrille(grille);
-		/*for (int j = 0; j < grille.length; j++)
-		{
-			for (int i = 0; i < grille.length; i++)
-			{
-				System.out.print(grille[i][j].getValeur());
-			}
-			System.out.println();
-		}*/
 		/* Debut du jeu*/
 		
 	}
