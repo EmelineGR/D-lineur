@@ -1,8 +1,0 @@
-/**
- * 
- */
-/**
- * @author Emeline
- *
- */
-package Demineur;
