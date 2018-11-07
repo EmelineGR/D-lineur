@@ -1,9 +1,9 @@
 package grille;
-import java.util.List;
+//import java.util.List;
 
 public class Grille 
 {
-	private ArrayList<ArrayList<Case>> grille;
+	private Case[][] grille;
 	private int taille;
 	
 	public void setTaille(int taille)
@@ -18,6 +18,7 @@ public class Grille
 	public Grille(int taille)
 	{
 		setTaille(taille);
+		grille = new Case[taille][taille];
 	}
 	public void remplirGrille()
 	{
@@ -25,7 +26,7 @@ public class Grille
 		{
 			for (int i = 0; i < this.taille; i++)
 			{
-				grille[i][j].setValeur(0);
+				grille[i][j] = new Case(0);
 			}
 		}			
 	}
@@ -33,9 +34,11 @@ public class Grille
 	{
 		for (int j = 0; j < this.taille; j++)
 		{
+			System.out.print("|");
 			for (int i = 0; i < this.taille; i++)
 			{
 				System.out.print(grille[i][j].getValeur());
+				System.out.print("|");
 			}
 			System.out.println();
 		}		

@@ -7,6 +7,7 @@ public class Main
 		Grille jeu = new Grille(5);
 		jeu.remplirGrille();
 		jeu.afficherGrille();
+		
 	}
 	
 }
