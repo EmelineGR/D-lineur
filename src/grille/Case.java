@@ -3,11 +3,12 @@ package grille;
 public class Case 
 {
 	private int valeur;
-	private int statut;
-	public Case(int val,int img)
+	private boolean mine;
+	private boolean drapeau;
+	private boolean decouverte;
+	public Case(int val)
 	{
 		this.valeur = val;
-		this.statut = img;
 	}
 	public void setValeur(int val)
 	{
@@ -17,12 +18,28 @@ public class Case
 	{
 		return this.valeur ;
 	}
-	public void setImage(int sta)
+	public void setMine(boolean mine)
 	{
-		this.statut = sta;
+		this.mine = mine;
 	}
-	public int getImage()
+	public boolean getMine()
 	{
-		return this.statut ;
+		return mine ;
+	}
+	public void setDrapeau(boolean drapeau)
+	{
+		this.drapeau = drapeau;
+	}
+	public boolean getDrapeau()
+	{
+		return drapeau ;
+	}
+	public void setDecouverte(boolean decouverte)
+	{
+		this.decouverte = decouverte;
+	}
+	public boolean getDecouverte()
+	{
+		return decouverte ;
 	}
 }
