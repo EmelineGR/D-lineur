@@ -27,8 +27,29 @@ public class Grille
 			for (int i = 0; i < this.taille; i++)
 			{
 				grille[i][j] = new Case(0);
+				grille[i][j].setDecouverte(false);
 			}
 		}			
+	}
+	public void remplirMine()
+	{
+		//TO DO EMELINE
+		grille[0][0].setMine(true);
+		
+	}
+	public void calculerValeur()
+	{
+		//TO DO TRES LONG
+		for (int j = 0; j < this.taille; j++)
+		{
+			for (int i = 0; i < this.taille; i++)
+			{
+					if(grille[i][j].getMine())
+					{
+						grille[i][j].setValeur(grille[i][j].getValeur() +1);
+					}
+			}
+		}				
 	}
 	public void afficherGrille()
 	{
@@ -37,11 +58,25 @@ public class Grille
 			System.out.print("|");
 			for (int i = 0; i < this.taille; i++)
 			{
-				System.out.print(grille[i][j].getValeur());
+				if(grille[i][j].getDecouverte())
+				{
+					System.out.print(grille[i][j].getValeur());
+				}
+				else { System.out.print("?");}
+				
 				System.out.print("|");
 			}
 			System.out.println();
 		}		
-	}	
+	}
+	public void devoilerCase(int x, int y)
+	{
+		if(x > taille || y > taille)
+		{
+			System.out.println("mauvaise coordonnée");
+		}
+		else { grille[x][y].setDecouverte(true);}
+	}
+	
 	
 }
