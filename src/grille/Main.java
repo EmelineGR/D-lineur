@@ -6,15 +6,15 @@ public class Main
 	{
 		Grille jeu = new Grille(10);
 		jeu.remplirGrille();
-		for (int j = 0; j < 10; j++)
+		/*for (int j = 0; j < 10; j++)
 		{
 			for (int i = 0; i < 10; i++)
 			{
 				jeu.devoilerCase(i, j);
 			}
-		}
-		
+		}*/
 		jeu.remplirMine();
+		jeu.devoilerCase(5, 5);
 		jeu.afficherGrille();
 	}
 	

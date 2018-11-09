@@ -88,11 +88,43 @@ public class Grille
 	}
 	public void devoilerCase(int x, int y)
 	{
-		if(x > taille || y > taille)
-		{
-			System.out.println("mauvaise coordonnée");
+		if( x >=0 && y >=0 && x < taille && y< taille) 
+		{ 
+			grille[x][y].setDecouverte(true);
+			if (grille[x][y].getValeur() == 0)
+			{
+				procheZero(x-1,y-1);
+				procheZero(x-1,y);
+				procheZero(x,y-1);
+				procheZero(x-1,y+1);
+				procheZero(x+1,y-1);
+				procheZero(x,y+1);
+				procheZero(x+1,y);
+				procheZero(x+1,y+1);
+			}
 		}
-		else { grille[x][y].setDecouverte(true);}
+		
+	}
+	public void procheZero(int x, int y)
+	{
+		if( x >=0 && y >=0 && x < taille && y< taille)
+		{
+			if (!grille[x][y].getDecouverte())
+			{
+				grille[x][y].setDecouverte(true);
+				if (grille[x][y].getValeur() == 0)
+				{
+					procheZero(x-1,y-1);
+					procheZero(x-1,y);
+					procheZero(x,y-1);
+					procheZero(x-1,y+1);
+					procheZero(x+1,y-1);
+					procheZero(x,y+1);
+					procheZero(x+1,y);
+					procheZero(x+1,y+1);
+				}
+			}
+		}
 	}
 	
 	
