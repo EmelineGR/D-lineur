@@ -33,23 +33,33 @@ public class Grille
 	}
 	public void remplirMine()
 	{
-		//TO DO EMELINE
-		grille[0][0].setMine(true);
-		
-	}
-	public void calculerValeur()
-	{
 		//TO DO TRES LONG
 		for (int j = 0; j < this.taille; j++)
 		{
 			for (int i = 0; i < this.taille; i++)
 			{
-					if(grille[i][j].getMine())
-					{
-						grille[i][j].setValeur(grille[i][j].getValeur() +1);
-					}
+				int n = (int)(Math.random() * 6);
+				if(n==5)
+				{
+					grille[i][j].setMine(true);
+					addValue(i-1,j-1);
+					addValue(i,j-1);
+					addValue(i-1,j);
+					addValue(i+1,j-1);
+					addValue(i-1,j+1);
+					addValue(i+1,j);
+					addValue(i,j+1);
+					addValue(i+1,j+1);
+				}
 			}
 		}				
+	}
+	public void addValue(int x,int y)
+	{
+		if( x >=0 && y >=0 && x < taille && y< taille)
+		{
+			grille[x][y].setValeur(grille[x][y].getValeur()+1);
+		}
 	}
 	public void afficherGrille()
 	{
@@ -60,9 +70,16 @@ public class Grille
 			{
 				if(grille[i][j].getDecouverte())
 				{
-					System.out.print(grille[i][j].getValeur());
+					if(grille[i][j].getMine())
+					{
+						System.out.print("*");
+					}
+					else {System.out.print(grille[i][j].getValeur());}
 				}
-				else { System.out.print("?");}
+				else 
+				{ 
+					System.out.print("?");
+				}
 				
 				System.out.print("|");
 			}

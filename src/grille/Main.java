@@ -6,9 +6,15 @@ public class Main
 	{
 		Grille jeu = new Grille(10);
 		jeu.remplirGrille();
-		jeu.devoilerCase(0, 0);
+		for (int j = 0; j < 10; j++)
+		{
+			for (int i = 0; i < 10; i++)
+			{
+				jeu.devoilerCase(i, j);
+			}
+		}
+		
 		jeu.remplirMine();
-		jeu.calculerValeur();
 		jeu.afficherGrille();
 	}
 	
