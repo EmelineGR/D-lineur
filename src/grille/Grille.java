@@ -126,6 +126,17 @@ public class Grille
 			}
 		}
 	}
+	public void mettreDrapeau(int x, int y)
+	{
+		if( x >=0 && y >=0 && x < taille && y< taille)
+		{
+			if (grille[x][y].getDrapeau())
+			{
+				grille[x][y].setDrapeau(false);
+			}
+			else {grille[x][y].setDrapeau(true);}
+		}
+	}
 	
 	
 }
