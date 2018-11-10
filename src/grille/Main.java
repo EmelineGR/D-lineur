@@ -16,7 +16,7 @@ public class Main
 		jeu.remplirMine();
 		jeu.devoilerCase(5, 5);
 		jeu.afficherGrille();*/
-		Partie game = new Partie(10);
+		Partie game = new Partie(5);
 		game.lancerPartie();
 	}
 	
