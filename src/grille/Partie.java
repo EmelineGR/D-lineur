@@ -37,6 +37,13 @@ public class Partie
 		int x,y,action;
 		Scanner sc;
 		
+
+		do
+		{	
+		System.out.println();
+		sc = new Scanner(System.in);
+		action = sc.nextInt();
+		}while(action == 1 || action == 2);
 		do
 		{	
 		System.out.println();
@@ -46,12 +53,6 @@ public class Partie
 		sc = new Scanner(System.in);
 		y = sc.nextInt();	
 		}while(coordonneBonne(x,y));
-		do
-		{	
-		System.out.println();
-		sc = new Scanner(System.in);
-		action = sc.nextInt();
-		}while(action == 1 || action == 2);
 		
 		if(action == 1)
 		{
