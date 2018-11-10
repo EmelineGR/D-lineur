@@ -166,24 +166,50 @@ public class Grille
 		}
 	}
 	
+	/**
+	 * mettreDrapeau 
+	 * place un drapeau sur la case sélectionne
+	 * si un drapeau est déjà présent sur cette case, le retire
+	 * @param x
+	 * @param y
+	 */
 	public void mettreDrapeau(int x, int y)
 	{
 		if( x >=0 && y >=0 && x < taille && y< taille)
 		{
 			if (grille[x][y].getDrapeau())
-			{
-				grille[x][y].setDrapeau(false);
-			}
-			else {grille[x][y].setDrapeau(true);}
+			{grille[x][y].setDrapeau(false);}
+			
+			else 
+			{grille[x][y].setDrapeau(true);}
 		}
 	}
 	
+	/**
+	 * presenceMine
+	 * Indique la présence d'une mine sur la case séléctionnée
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	public boolean presenceMine(int x, int y)
 	{return grille[x][y].getMine();}
 	
+	/**
+	 * caseDev
+	 * Indique si la case est découverte/affiché
+	 * @param x
+	 * @param y
+	 * @return
+	 */
 	public boolean caseDev(int x, int y)
 	{return grille[x][y].getDecouverte();}
 	
+	/**
+	 * verifierWin
+	 * vérifie si le joueur à dévoiler toutes les case ne contenant pas de mine
+	 * @return
+	 */
 	public boolean verifierWin()
 	{
 		for (int j = 0; j < this.taille; j++)
