@@ -63,6 +63,12 @@ public class Grille
 	}
 	public void afficherGrille()
 	{
+		for (int k = 0; k < this.taille; k++)
+		{
+			System.out.print("|");
+			System.out.print(k);
+		}
+		System.out.println();
 		for (int j = 0; j < this.taille; j++)
 		{
 			System.out.print("|");
@@ -88,6 +94,7 @@ public class Grille
 				
 				System.out.print("|");
 			}
+			System.out.print(" " + j);
 			System.out.println();
 		}		
 	}
@@ -144,7 +151,11 @@ public class Grille
 	}
 	public boolean presenceMine(int x, int y)
 	{
-		return !grille[x][y].getMine();
+		return grille[x][y].getMine();
+	}
+	public boolean caseDev(int x, int y)
+	{
+		return grille[x][y].getDrapeau();
 	}
 	
 	

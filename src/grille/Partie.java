@@ -48,14 +48,14 @@ public class Partie
 		}while(!coordonneBonne(x,y));
 		do
 		{	
-		System.out.println("Saisissez votre action :  1 = dévoiler la case   2 = mettre un drapeau");
+		System.out.println("Saisissez votre action :  1 = dévoiler la case   2 = mettre/enlever un drapeau");
 		sc = new Scanner(System.in);
 		action = sc.nextInt();
 		}while(action != 1 && action != 2);
 		if(action == 1)
 		{
 			jeu.devoilerCase(x, y);
-			return jeu.presenceMine(x, y);
+			return !jeu.presenceMine(x, y);
 		}
 		else {jeu.mettreDrapeau(x, y);}
 		
@@ -68,7 +68,7 @@ public class Partie
 	{
 		if ( x >=0 && y >=0 && x < difficulte && y< difficulte)
 		{
-			return true;
+			return !jeu.caseDev(x,y);
 		}
 		else { return false ;}
 	}
