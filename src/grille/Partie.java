@@ -79,8 +79,12 @@ public class Partie
 			jeu.afficherGrille();
 			vie = tour();
 			
-		}while(vie);
-		System.out.println("Perdu");
+		}while(vie && jeu.verifierWin());
+		if(!vie)
+		{
+			System.out.println("Perdu");
+		}
+		else { System.out.println("Gagné");}
 	}
 	
 	

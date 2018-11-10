@@ -163,6 +163,20 @@ public class Grille
 	{
 		return grille[x][y].getDrapeau();
 	}
+	public boolean verifierWin()
+	{
+		for (int j = 0; j < this.taille; j++)
+		{
+			for (int i = 0; i < this.taille; i++)
+			{
+				if(!caseDev(j,i) && !presenceMine(j,i))
+				{
+					return false;
+				}
+			}
+		}
+		return true;
+	}
 	
 	
 	
