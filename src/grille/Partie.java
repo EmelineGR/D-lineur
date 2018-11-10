@@ -80,6 +80,7 @@ public class Partie
 			vie = tour();
 			
 		}while(vie && jeu.verifierWin());
+		jeu.afficherGrille();
 		if(!vie)
 		{
 			System.out.println("Perdu");

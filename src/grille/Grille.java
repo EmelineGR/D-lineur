@@ -169,7 +169,7 @@ public class Grille
 		{
 			for (int i = 0; i < this.taille; i++)
 			{
-				if(!caseDev(j,i) && !presenceMine(j,i))
+				if(!grille[j][i].getDecouverte() && !presenceMine(j,i))
 				{
 					return false;
 				}
