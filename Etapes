@@ -1,0 +1,16 @@
+Le joueur entre la taille de grille
+Le programme créer une grille avec les dimenssions données
+Le joueur choisis le nombre de bombes
+Le programme place les bombes aléatoirement dans la grille
+Le joueur choisis ce qu'il veux faire (placer/retirer drapeau, découvrir case)
+Le joueur choisis la case
+Le programme vérifie que la case existe
+Le programme vérifie si le choix du joueur est possible sur la case choisis
+Si non retour 5
+Si le joueur place un drapeau, le programme vérifie si le nombre de drapeau est égale au nombre de bombe
+Si 10 vrai alors le programme vérifie le positionnement des bombes et des drapeaux
+Si la positions de TOUS les drapeaux = bombes alors le programme affiche que le joueur à gagné
+Le programme vérifie si toutes les cases sauf les bombes ont été découverte
+Si 13 vrai alors le joueur gagne
+Sinon le programme affiche la grille avec les modifications du joueur
+Retour étape 5 
