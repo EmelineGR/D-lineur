@@ -135,7 +135,8 @@ public class Grille
 			}
 			
 			System.out.println("  " + j);
-		}	
+		}
+		System.out.println(" "); 
 	}
 	
 	/**
