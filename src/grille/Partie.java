@@ -76,8 +76,9 @@ public class Partie
 	{
 		do
 		{
-			vie = tour();
 			jeu.afficherGrille();
+			vie = tour();
+			
 		}while(vie);
 		System.out.println("Perdu");
 	}
