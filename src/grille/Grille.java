@@ -161,7 +161,7 @@ public class Grille
 	}
 	public boolean caseDev(int x, int y)
 	{
-		return grille[x][y].getDrapeau();
+		return grille[x][y].getDecouverte();
 	}
 	public boolean verifierWin()
 	{
@@ -169,7 +169,7 @@ public class Grille
 		{
 			for (int i = 0; i < this.taille; i++)
 			{
-				if(!grille[j][i].getDecouverte() && !presenceMine(j,i))
+				if(!caseDev(j,i) && !presenceMine(j,i))
 				{
 					return false;
 				}

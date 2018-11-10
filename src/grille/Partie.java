@@ -68,9 +68,19 @@ public class Partie
 	{
 		if ( x >=0 && y >=0 && x < difficulte && y< difficulte)
 		{
-			return !jeu.caseDev(x,y);
+			if (jeu.caseDev(x,y))
+			{
+				System.out.println("Case déja dévoilé , recommencer");
+				return false;
+			}
+			else { return true ;}
+			
 		}
-		else { return false ;}
+		else
+		{ 
+			System.out.println("Mauvaise coordonnées, recommencer");
+			return false ;
+		}
 	}
 	public void lancerPartie()
 	{
