@@ -36,31 +36,31 @@ public class Partie
 	{
 		int x,y,action;
 		Scanner sc;
-		
 
 		do
 		{	
-		System.out.println();
-		sc = new Scanner(System.in);
-		action = sc.nextInt();
-		}while(action == 1 || action == 2);
-		do
-		{	
-		System.out.println();
+		System.out.println("Saisissez la colonne de votre case");
 		sc = new Scanner(System.in);
 		x = sc.nextInt();
-		System.out.println();
+		System.out.println("Saisissez la ligne de votre case");
 		sc = new Scanner(System.in);
 		y = sc.nextInt();	
-		}while(coordonneBonne(x,y));
-		
+		}while(!coordonneBonne(x,y));
+		do
+		{	
+		System.out.println("Saisissez votre action :  1 = dévoiler la case   2 = mettre un drapeau");
+		sc = new Scanner(System.in);
+		action = sc.nextInt();
+		}while(action != 1 && action != 2);
 		if(action == 1)
 		{
 			jeu.devoilerCase(x, y);
+			return jeu.presenceMine(x, y);
 		}
 		else {jeu.mettreDrapeau(x, y);}
-		sc.close();
-		return jeu.presenceMine(x, y);
+		
+		return true;
+		
 		
 	}
 	
@@ -77,7 +77,9 @@ public class Partie
 		do
 		{
 			vie = tour();
+			jeu.afficherGrille();
 		}while(vie);
+		System.out.println("Perdu");
 	}
 	
 	

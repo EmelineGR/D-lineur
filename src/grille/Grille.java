@@ -78,7 +78,12 @@ public class Grille
 				}
 				else 
 				{ 
-					System.out.print("?");
+					if(grille[i][j].getDrapeau())
+					{
+						System.out.print("p");
+					}
+					else {System.out.print("?");}
+					
 				}
 				
 				System.out.print("|");
@@ -139,7 +144,7 @@ public class Grille
 	}
 	public boolean presenceMine(int x, int y)
 	{
-		return grille[x][y].getDecouverte();
+		return !grille[x][y].getMine();
 	}
 	
 	
