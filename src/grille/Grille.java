@@ -137,6 +137,11 @@ public class Grille
 			else {grille[x][y].setDrapeau(true);}
 		}
 	}
+	public boolean presenceMine(int x, int y)
+	{
+		return grille[x][y].getDecouverte();
+	}
+	
 	
 	
 }

@@ -32,7 +32,7 @@ public class Partie
 		setVie(true);
 		
 	}
-	public void tour()
+	public boolean tour()
 	{
 		int x,y,action;
 		Scanner sc;
@@ -58,6 +58,8 @@ public class Partie
 			jeu.devoilerCase(x, y);
 		}
 		else {jeu.mettreDrapeau(x, y);}
+		sc.close();
+		return jeu.presenceMine(x, y);
 		
 	}
 	
@@ -68,6 +70,13 @@ public class Partie
 			return true;
 		}
 		else { return false ;}
+	}
+	public void lancerPartie()
+	{
+		do
+		{
+			vie = tour();
+		}while(vie);
 	}
 	
 	
