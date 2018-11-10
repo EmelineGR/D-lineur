@@ -68,6 +68,12 @@ public class Grille
 			System.out.print("|");
 			System.out.print(k);
 		}
+		System.out.print("|");
+		System.out.println();
+		for (int l = 0; l < this.taille; l++)
+		{
+			System.out.print("--");
+		}
 		System.out.println();
 		for (int j = 0; j < this.taille; j++)
 		{
