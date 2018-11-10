@@ -79,7 +79,7 @@ public class Partie
 			jeu.afficherGrille();
 			vie = tour();
 			
-		}while(vie && jeu.verifierWin());
+		}while(vie && !jeu.verifierWin());
 		jeu.afficherGrille();
 		if(!vie)
 		{
