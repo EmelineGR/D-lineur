@@ -1,23 +1,40 @@
 package grille;
-//import java.util.List;
 
 public class Grille 
 {
-	private Case[][] grille;
+	private Case[][] grille;//tableau de Case
 	private int taille;
 	
+	/**
+	 * setTaille permet de définir la taille de la grille
+	 * @param taille
+	 */
 	public void setTaille(int taille)
 	{this.taille = taille;}
 	
+	/**
+	 * getTaille permet de récupérer la taille de la grille
+	 * @return
+	 */
 	public int getTaille()
 	{return this.taille ;}
-		
+	
+	/**
+	 * Grille Constructeur de la grille
+	 * Construit une grille de dimmenssion 
+	 * @param taille
+	 */
 	public Grille(int taille)
 	{
 		setTaille(taille);
 		grille = new Case[taille][taille];
 	}
 	
+	/**
+	 * remplirGrille parcours la grille en initialisant 
+	 * la valeur des cases à 0
+	 * et ne les affichant pas
+	 */
 	public void remplirGrille()
 	{
 		for (int j = 0; j < this.taille; j++)
@@ -30,6 +47,22 @@ public class Grille
 		}			
 	}
 	
+	/**
+	 * addValue permet d'ajouter 1 à la valeur d'une case
+	 * @param x
+	 * @param y
+	 */
+	public void addValue(int x,int y)
+	{
+		if( x >=0 && y >=0 && x < taille && y< taille)
+		{grille[x][y].setValeur(grille[x][y].getValeur()+1);}
+	}
+	
+	/**
+	 * remplirMine parcours la grille
+	 * puis place des mines aléatoirement
+	 * et ajoute 1 à la valeur des case autour d'une mine
+	 */
 	public void remplirMine()
 	{
 		for (int j = 0; j < this.taille; j++)
@@ -53,12 +86,12 @@ public class Grille
 		}				
 	}
 	
-	public void addValue(int x,int y)
-	{
-		if( x >=0 && y >=0 && x < taille && y< taille)
-		{grille[x][y].setValeur(grille[x][y].getValeur()+1);}
-	}
-	
+	/**
+	 * afficherGrille 
+	 * affiche les abscisses de la grille
+	 * puis parcours la grille affin d'afficher les cases en respectant l'avancé du jeu
+	 * affiche aussi les ordonnées à droite
+	 */
 	public void afficherGrille()
 	{
 		
@@ -105,26 +138,13 @@ public class Grille
 		}	
 	}
 	
+	/**
+	 * devoilerCase dévoile la case choisis par le joueur
+	 * si la case choisis vaut 0 alors le programme dévoile les case autour
+	 * @param x
+	 * @param y
+	 */
 	public void devoilerCase(int x, int y)
-	{
-		if( x >=0 && y >=0 && x < taille && y< taille) 
-		{ 
-			grille[x][y].setDecouverte(true);
-			if (grille[x][y].getValeur() == 0)
-			{
-				procheZero(x-1,y-1);
-				procheZero(x-1,y);
-				procheZero(x,y-1);
-				procheZero(x-1,y+1);
-				procheZero(x+1,y-1);
-				procheZero(x,y+1);
-				procheZero(x+1,y);
-				procheZero(x+1,y+1);
-			}
-		}
-	}
-	
-	public void procheZero(int x, int y)
 	{
 		if( x >=0 && y >=0 && x < taille && y< taille)
 		{
@@ -133,14 +153,14 @@ public class Grille
 				grille[x][y].setDecouverte(true);
 				if (grille[x][y].getValeur() == 0)
 				{
-					procheZero(x-1,y-1);
-					procheZero(x-1,y);
-					procheZero(x,y-1);
-					procheZero(x-1,y+1);
-					procheZero(x+1,y-1);
-					procheZero(x,y+1);
-					procheZero(x+1,y);
-					procheZero(x+1,y+1);
+					devoilerCase(x-1,y-1);
+					devoilerCase(x-1,y);
+					devoilerCase(x,y-1);
+					devoilerCase(x-1,y+1);
+					devoilerCase(x+1,y-1);
+					devoilerCase(x,y+1);
+					devoilerCase(x+1,y);
+					devoilerCase(x+1,y+1);
 				}
 			}
 		}
