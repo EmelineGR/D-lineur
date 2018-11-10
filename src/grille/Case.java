@@ -6,40 +6,31 @@ public class Case
 	private boolean mine;
 	private boolean drapeau;
 	private boolean decouverte;
+	
 	public Case(int val)
-	{
-		this.valeur = val;
-	}
+	{this.valeur = val;}
+	
 	public void setValeur(int val)
-	{
-		this.valeur = val;
-	}
+	{this.valeur = val;}
+	
 	public int getValeur()
-	{
-		return this.valeur ;
-	}
+	{return this.valeur ;}
+	
 	public void setMine(boolean mine)
-	{
-		this.mine = mine;
-	}
+	{this.mine = mine;}
+	
 	public boolean getMine()
-	{
-		return mine ;
-	}
+	{return mine ;}
+	
 	public void setDrapeau(boolean drapeau)
-	{
-		this.drapeau = drapeau;
-	}
+	{this.drapeau = drapeau;}
+	
 	public boolean getDrapeau()
-	{
-		return drapeau ;
-	}
+	{return drapeau ;}
+	
 	public void setDecouverte(boolean decouverte)
-	{
-		this.decouverte = decouverte;
-	}
+	{this.decouverte = decouverte;}
+	
 	public boolean getDecouverte()
-	{
-		return decouverte ;
-	}
+	{return decouverte ;}
 }

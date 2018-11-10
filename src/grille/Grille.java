@@ -7,19 +7,17 @@ public class Grille
 	private int taille;
 	
 	public void setTaille(int taille)
-	{
-		this.taille = taille;
-	}
-	public int getTaille()
-	{
-		return this.taille ;
-	}
+	{this.taille = taille;}
 	
+	public int getTaille()
+	{return this.taille ;}
+		
 	public Grille(int taille)
 	{
 		setTaille(taille);
 		grille = new Case[taille][taille];
 	}
+	
 	public void remplirGrille()
 	{
 		for (int j = 0; j < this.taille; j++)
@@ -31,9 +29,9 @@ public class Grille
 			}
 		}			
 	}
+	
 	public void remplirMine()
 	{
-		//TO DO TRES LONG
 		for (int j = 0; j < this.taille; j++)
 		{
 			for (int i = 0; i < this.taille; i++)
@@ -54,27 +52,29 @@ public class Grille
 			}
 		}				
 	}
+	
 	public void addValue(int x,int y)
 	{
 		if( x >=0 && y >=0 && x < taille && y< taille)
-		{
-			grille[x][y].setValeur(grille[x][y].getValeur()+1);
-		}
+		{grille[x][y].setValeur(grille[x][y].getValeur()+1);}
 	}
+	
 	public void afficherGrille()
 	{
+		
 		for (int k = 0; k < this.taille; k++)
 		{
 			System.out.print("|");
 			System.out.print(k);
 		}
-		System.out.print("|");
-		System.out.println();
+		
+		System.out.println("| X");
+		
 		for (int l = 0; l < this.taille; l++)
-		{
-			System.out.print("--");
-		}
-		System.out.println();
+		{System.out.print(" _");}
+		
+		System.out.println("   Y");
+		
 		for (int j = 0; j < this.taille; j++)
 		{
 			System.out.print("|");
@@ -83,27 +83,28 @@ public class Grille
 				if(grille[i][j].getDecouverte())
 				{
 					if(grille[i][j].getMine())
-					{
-						System.out.print("*");
-					}
-					else {System.out.print(grille[i][j].getValeur());}
+					{System.out.print("#");}
+					
+					else 
+					{System.out.print(grille[i][j].getValeur());}
 				}
+				
 				else 
 				{ 
 					if(grille[i][j].getDrapeau())
-					{
-						System.out.print("p");
-					}
-					else {System.out.print("?");}
+					{System.out.print("P");}
 					
+					else 
+					{System.out.print("?");}
 				}
 				
 				System.out.print("|");
 			}
-			System.out.print(" " + j);
-			System.out.println();
-		}		
+			
+			System.out.println("  " + j);
+		}	
 	}
+	
 	public void devoilerCase(int x, int y)
 	{
 		if( x >=0 && y >=0 && x < taille && y< taille) 
@@ -121,8 +122,8 @@ public class Grille
 				procheZero(x+1,y+1);
 			}
 		}
-		
 	}
+	
 	public void procheZero(int x, int y)
 	{
 		if( x >=0 && y >=0 && x < taille && y< taille)
@@ -144,6 +145,7 @@ public class Grille
 			}
 		}
 	}
+	
 	public void mettreDrapeau(int x, int y)
 	{
 		if( x >=0 && y >=0 && x < taille && y< taille)
@@ -155,14 +157,13 @@ public class Grille
 			else {grille[x][y].setDrapeau(true);}
 		}
 	}
+	
 	public boolean presenceMine(int x, int y)
-	{
-		return grille[x][y].getMine();
-	}
+	{return grille[x][y].getMine();}
+	
 	public boolean caseDev(int x, int y)
-	{
-		return grille[x][y].getDecouverte();
-	}
+	{return grille[x][y].getDecouverte();}
+	
 	public boolean verifierWin()
 	{
 		for (int j = 0; j < this.taille; j++)
@@ -170,14 +171,9 @@ public class Grille
 			for (int i = 0; i < this.taille; i++)
 			{
 				if(!caseDev(j,i) && !presenceMine(j,i))
-				{
-					return false;
-				}
+				{return false;}
 			}
 		}
 		return true;
 	}
-	
-	
-	
 }
